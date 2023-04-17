@@ -1,5 +1,5 @@
 import unittest
-from ipv4 import IPNetwork
+from ipcalc.ipv4 import IPNetwork
 
 
 class IPNetworkTest(unittest.TestCase):
