@@ -39,8 +39,8 @@ classifiers = [
 repository = "https://github.com/jmillana/ip_calculator"
 
 [tool.setup.packages.find]
-where = ["ip"]
+where = ["ipcalc"]
 exclude = ["tests*"]
 
 [project.scripts]
-ipcalc = "ipcalc.main:main"
+ipcalc = "ipcalc.cli:app"
