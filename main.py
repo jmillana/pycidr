@@ -1,13 +1,12 @@
 import typer
-from dataclasses import dataclass
-from typing import Tuple
-from ip.ip import IpAddress
+
+from ip.ipv4 import IPNetwork
 from ip import display
 
 
 def main(ip: str):
-    ip_address = IpAddress.from_cidr(ip)
-    display.show_2column_table(ip_address)
+    ip_network = IPNetwork.from_cidr(ip)
+    display.show_2column_table(ip_network)
 
 
 if __name__ == "__main__":
