@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools", "wheel", "versioneer[toml]"]
+build-backend = "setuptools.build_meta"
+
+[tool.versioner]
+VCS = "git"
+style = "pep440"
+versionfile_source = "ip/_version.py"
+versionfile_build = "_version.py"
+tag_prefix = ""
+parentdir_prefix = "ip-"
+
+[project]
+name = 'ipcalc'
+dynamic = ['version']
+
+description = "Simple IP network calculator"
+readme = 'README.md'
+authors = [{ name = "jmillana", email = "jordi@marimon.tech" }]
+
+license = { file = "LICENSE" }
+dependencies = ["rich>=13.3.4", "typer>=0.7.0"]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Topic :: System :: Networking",
+  "Topic :: System :: Systems Administration",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+repository = "https://github.com/jmillana/ip_calculator"
+
+[tool.setup.packages.find]
+where = ["ip"]
+exclude = ["tests*"]
+
+[project.scripts]
+ipcalc = "ipcalc.main:main"
