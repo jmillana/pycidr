@@ -28,7 +28,7 @@ class IPNetwork:
 
     @property
     def cidr(self) -> str:
-        return f"{self.ip}/{self.mask}"
+        return f"{self.ip}/{self.mask.value}"
 
     @property
     def broadcast_ip(self) -> IPv4:

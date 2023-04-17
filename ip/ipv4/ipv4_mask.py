@@ -37,3 +37,7 @@ class IPv4Mask:
 
     def __str__(self) -> str:
         return f"/{self.value}"
+
+    def __post_init__(self) -> None:
+        if not 0 <= self.value <= 32:
+            raise ValueError("Mask value must be between 0 and 32")
