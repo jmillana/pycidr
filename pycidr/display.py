@@ -1,5 +1,6 @@
 from rich import print
 from rich.table import Table
+
 from .ipv4 import IPNetwork
 
 

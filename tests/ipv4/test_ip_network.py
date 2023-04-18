@@ -1,4 +1,5 @@
 import unittest
+
 from pycidr.ipv4 import IPNetwork
 
 

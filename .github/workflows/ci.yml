@@ -32,6 +32,12 @@ jobs:
         
       - name: Code Quality
         run: poetry run black . --check
+
+      - name: Run isort
+        run: poetry run isort . --check-only
+
+      - name: Run bandit
+        run: poetry run bandit -
         
       - name: Test with pytest
         run: poetry run pytest --cov . -n 2
