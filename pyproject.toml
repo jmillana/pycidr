@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "ipcalc"
+name = "pycidr"
 version = "0.1.0"
 description = "A simple IP subnetting calculator"
-authors = ["jmillana"]
+authors = ["jmillana <jordi@marimon.tech>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -22,4 +22,4 @@ pytest = "^7.3.1"
 [tool.poetry.group.dev.dependencies]
 
 [tool.poetry.scripts]
-ipcalc = "ipcalc:app"
+pycidr = "pycidr:app"

@@ -1,5 +1,5 @@
 import unittest
-from ipcalc.ipv4 import IPNetwork
+from pycidr.ipv4 import IPNetwork
 
 
 class IPNetworkTest(unittest.TestCase):

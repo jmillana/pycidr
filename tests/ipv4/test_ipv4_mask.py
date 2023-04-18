@@ -1,5 +1,5 @@
 import unittest
-from ipcalc.ipv4 import IPv4Mask
+from pycidr.ipv4 import IPv4Mask
 
 
 class IPv4MaskTest(unittest.TestCase):
