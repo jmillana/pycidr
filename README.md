@@ -1,4 +1,6 @@
 # ip_calculator
+[![CI](https://github.com/jmillana/pycidr/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jmillana/pycidr/actions/workflows/ci.yml)
+
 A cli utility to get detailed IP information
          
          IP Address Information for: 172.14.15.16/21    
