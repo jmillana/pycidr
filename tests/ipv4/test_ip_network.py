@@ -31,20 +31,30 @@ class IPNetworkTest(unittest.TestCase):
         self.assertEqual(bcast.address, "10.10.11.255")
 
     def test_get_cidr_class(self):
-        first_c_network = IPNetwork.from_cidr("10.10.10.10/32")
-        self.assertEqual(first_c_network.cidr_class, "C")
-        last_c_network = IPNetwork.from_cidr("10.10.10.10/24")
-        self.assertEqual(last_c_network.cidr_class, "C")
+        first_a_network = IPNetwork.from_cidr("0.0.0.0/32")
+        self.assertEqual(first_a_network.cidr_class, "A")
+        last_a_network = IPNetwork.from_cidr("127.255.255.255/6")
+        self.assertEqual(last_a_network.cidr_class, "A")
 
-        first_b_network = IPNetwork.from_cidr("10.10.10.10/23")
+        first_b_network = IPNetwork.from_cidr("128.0.0.0/23")
         self.assertEqual(first_b_network.cidr_class, "B")
-        last_b_network = IPNetwork.from_cidr("10.10.10.10/16")
+        last_b_network = IPNetwork.from_cidr("191.255.255.255/16")
         self.assertEqual(last_b_network.cidr_class, "B")
 
-        first_a_network = IPNetwork.from_cidr("10.10.10.10/15")
-        self.assertEqual(first_a_network.cidr_class, "A")
-        last_a_network = IPNetwork.from_cidr("10.10.10.10/0")
-        self.assertEqual(last_a_network.cidr_class, "A")
+        first_c_network = IPNetwork.from_cidr("192.0.0.0/15")
+        self.assertEqual(first_c_network.cidr_class, "C")
+        last_c_network = IPNetwork.from_cidr("223.255.255.255/16")
+        self.assertEqual(last_c_network.cidr_class, "C")
+
+        first_d_network = IPNetwork.from_cidr("224.0.0.0/15")
+        self.assertEqual(first_d_network.cidr_class, "D")
+        last_d_network = IPNetwork.from_cidr("239.255.255.255/16")
+        self.assertEqual(last_d_network.cidr_class, "D")
+
+        first_e_network = IPNetwork.from_cidr("240.0.0.0/15")
+        self.assertEqual(first_e_network.cidr_class, "E")
+        last_e_network = IPNetwork.from_cidr("255.255.255.255/16")
+        self.assertEqual(last_e_network.cidr_class, "E")
 
     def test_total_addresses(self):
         first_c_network = IPNetwork.from_cidr("10.10.10.10/32")

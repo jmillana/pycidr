@@ -41,12 +41,17 @@ class IPNetwork:
 
     @property
     def cidr_class(self) -> str:
-        if self.mask.value >= 24:
-            return "C"
-        elif self.mask.value >= 16:
-            return "B"
-        else:
+        first_octet = self.ip.octets[0]
+        if first_octet <= 127:
             return "A"
+        elif first_octet <= 191:
+            return "B"
+        elif first_octet <= 223:
+            return "C"
+        elif first_octet <= 239:
+            return "D"
+        else:
+            return "E"
 
     @property
     def total_addresses(self) -> int:
